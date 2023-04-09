@@ -1,0 +1,1 @@
+// This will be where the beginning of a file type shall be defined. Any invalid argument should end the program.

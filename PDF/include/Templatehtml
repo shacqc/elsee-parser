@@ -1,0 +1,145 @@
+if (*pointer == Metadata) 
+Checks for previous data, if non-eligible, it pushes head onto the stack.
+
+After last pop of a head's element, the next explicit non-head or head end will pop the head
+
+Once a body's element have been found push to the stack; if an element end tag has been found, pop from the stack
+If there is white space after implied body, document cannot be processed. Body's element must be the first thing or
+it would become an implied non part of the body
+
+
+
+If implied body has any metadata tags as first and head is omitted, it will be treated as a second head file. This is why body
+can only have metadata tags as start or be preceded by bodies if there is a start tag
+
+
+table rows can follow other table rows and the final one determines the pops of the previous; this is because it will assume
+all rows as part of the same table until there is none 
+
+The same applies for the th and td, it will search previous argument until last non eligible is found
+
+
+if(*pointer == th/td)
+{
+    if(EndStack[*pointer - 1] == th/td)
+        pop(1);
+    else 
+    {
+        while StartStack[*pointer] != th/td    
+         {
+             pop(1)
+         }
+    }
+}
+
+li can follow other li and last will pop until no li is left
+
+if(*pointer == li)
+{
+    if(EndStack[*pointer - 1] == li )
+        pop(1);
+    else 
+    {
+        while StartStack[*pointer] != li    
+         {
+             pop(1)
+         }
+    }
+}
+
+
+
+option can follow other options and last option end tag will describe the previous and pop the other ones 
+if(*pointer == option)
+{
+    if(EndStack[*pointer - 1] == option )
+        pop(1);
+    else 
+    {
+        while StartStack[*pointer] != option    
+         {
+             pop(1)
+         }
+    }
+}
+
+/*
+tbody and thead can follow other tbody and tfoot and the last end tag defines the properties of the previous
+
+Tfoot however still needs an end tag
+
+Tfoot end tag pops the tags of the previous 
+
+form, fielset, details , table, all of sectioning, all of foot, etc seem to default to popping a p it describes  if
+the next argument describes that  doesn't pertain to body or any other grouping that wouldnt exist within data. 
+Any argument after that belongs to the parent would belong to p.  Start tag is still needed
+
+Any argument from other elments for p will return an error if end tag is not explicit . Even if empty, certain will still cause an error
+
+
+colgroup  cannot describe which to close if both or more do not have enttag in the nesting
+It will default the child to being a non child 
+Every group element but one needs an eng tag 
+
+any argument that describes 
+
+metadata needs a head with char set and conditioning httpequiv 
+
+can be used as an intem prop  for any large group of content
+also name in any metadata requimrnet or itemprop
+
+can also be used for phrasing 
+
+style can be used for metadata content or a noscirpt in a head
+
+Only one head
+
+Only one body
+
+Body has sectioning content, flow which also has heading content
+
+Every rp needs an rt  or another rp that points to an rt. Ultimately, it needs to be in betweeen all needs to be in front of or behind an rt
+label input button( Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified.) is flow 
+select is  phrasing zero or option  script supporting elmetns 
+datalist is phrasing 
+it and optgroup used for prhasing or zero or option  script supporting elmetns 
+optgroup is child of select 
+option can be child of slec datalist or optgorup
+
+text area is self explanetoary
+
+output is phrasing 
+
+legend is first child of a field set 
+form is flow
+table is flow 
+summary is first child of details
+
+noscript is used in head and it cant be nested
+can be used in phrasing with same conditons 
+
+script is used for metadat prhasing or script supporting elements 
+
+template  can be used in metadata phrasing or script elments or child of colgroup without span
+
+
+caption can only be first child
+Table must be next if any capiton. There cannot be any sub elemnts 
+col can be child of col group whcih doesnt have span
+tbody must be after all capiton colgroups and thead  but only if table doesnt have any children
+thead must be before any tobdy tfoot  and has same requiremnt as body except table mus not have an chead children
+Must be last thing out of table group and cannot be any tfoot
+tr Can be used if only one tbody in table 
+td is child of tr 
+th is child of tr
+All 
+map phrasing 
+area need map ancestor
+
+picture is used when embedded in expected
+img  iframe embed  video objectas audio well
+param must be child of object before any flow 
+track must be child of media before any flow 
+source is child of picture or child of media before flow or tracks 
+
+*/

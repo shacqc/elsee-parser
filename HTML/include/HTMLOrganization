@@ -1,0 +1,106 @@
+Arguments shall be processed for certain parents after  a pop.
+
+Self Containing children that do not need to be described by their children are
+Tables
+Figures
+Lists
+
+native boolean flags are  disabled and checked
+
+Head helps define the other aspects of a document.
+Title would be what would be displayed at the top of Browser.
+Link would point to different resources to load for the document
+Style allows CSS style sheets
+Meta is other descriptive data
+Base points to other hyper links
+
+Article is grounded to body
+Section is grounded top parents
+Header is grounded to parents
+Footer is grounded to head and parent
+Address is grounded to embody
+Nav is grounded to Body and relevant children
+
+H rankings are arranged in order at the pop of hgroup tag
+
+Data list is rooted to parent but internalizes data types and their data
+data details point to the first available data type on the stack even alongside other data details
+menus have list but a list doesnt need to be within a menu.  A list can have ordered (ol) or unordered(ul)
+figure is rooted to parent but internalizes figcaptions
+main is rooted to  body, div,  forms without accessible names,  html
+div typically is child of datalist but can be used for flow; it enables the explicit division of data.
+
+Em can have be used for game mode as something to be given priority. It can be given Italics and a change in Typography
+Strong can be given Red Bold  Words that are underlined
+Code can be error checked or be exported and saved
+Var can be highlighted
+Cite can be saved in a list of citations; block quotes with no citations may be searched if Program will connect to internet
+Abbr can pop up words that is being abbreviated
+quotations can be given priority in game mode.  (Remembering Quote, remembering context of the quote, meaning of the quote)
+dfn when clicked can bring up pop up bar which has definitions; can be given priority in game mode
+a which is short for anchor describes hyperlink if theres an href  or where a link would be placed if not for lack of href and in such cases, the element's (hyper link's?) contents are stored
+ <STYLE type="text/css">
+ # is an alias for id
+ @ is for conditionals
+
+text-decoration: underline;
+
+possibly pre-formatted text
+
+Possibly Form Elements
+
+Possibly embedded elements
+
+Sectioning describes itself in respect to other section Elements or the parents
+
+Section describes body
+Article Describes body
+
+main describes body
+
+All header rankings enforce their rankings in respect to the hgroup they are
+
+Semantics describes the data they embody in particular
+
+<supports-condition> = not <supports-in-parens>
+                     | <supports-in-parens> [ and <supports-in-parens> ]*
+                     | <supports-in-parens> [ or <supports-in-parens> ]*
+<supports-in-parens> = ( <supports-condition> ) | <supports-feature> | <general-enclosed>
+<supports-feature> = <supports-decl>
+<supports-decl> = ( <declaration> )
+
+Style would have to be the arguments that would be fed to a Font Engine;  It would include Point Size, Font Family, Specific Member of Family,  Color  of Text,  Color of Background,  Underline
+For each element, Implementations and styles should be defined by the style meta data but defaults can be set
+
+Data List Implementation
+List is accompanied by visual line breaks
+Type is given a marker of some sort  and is distinctly marked from list elements
+
+ol is given numbers
+ul is given bullet points
+
+Div can be a line break between each non descendant parents
+
+emphasis can be given different fonts
+Strong can be given different coloring such as red
+
+For hgroup elements , it will search for all instances of a particular ranking header giving precedence to the most left one. Headers can be given standard size differences with those of the same ranking having the same Size
+
+Header will contain a solid horizontal line below it by default
+Footer will contain a solid horizontal line above it by default
+
+Table is open and closed by table element
+
+Caption is the Title  which shall have multiple break lines by default
+
+headers have a row
+data have a row  The data shall be encapsulated by a square black box with a horizontal line for each row (tr)
+and the max num of constituents making up a vertical lines
+
+Headers shall be bold by default and or have a greater font Size
+
+Caption Thead  body and Tfoot has a size based on size of Table
+
+tr is based on Thead
+
+th and td  is is based on tr
